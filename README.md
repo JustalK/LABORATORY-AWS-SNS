@@ -20,15 +20,15 @@ For creating this lab, there are two important steps. First I needed to configur
 
 The first step is to go for the SNS service using the search bar (alt + s). Once on the service, click on the orange button "Create Topic". I will be choosing a standard topic, I just have to fill up the name.
 
-[./documentation/0.png](./documentation/0.png)
+![./documentation/0.png](./documentation/0.png)
 
 Now I can click on the topic and create a subscription
 
-[./documentation/1.png](./documentation/1.png)
+![./documentation/1.png](./documentation/1.png)
 
 It's pretty straighforward since I will be sending my notification to my endpoint. I simply register my endpoint from ngrok redirecting the trafic to my local application. Once done my subscription will be on pending
 
-[./documentation/2.png](./documentation/2.png)
+![./documentation/2.png](./documentation/2.png)
 
 #### Confirming subscription
 
@@ -53,19 +53,19 @@ router.post(
 
 I can now choose my pending subscription and request for a confirmation.
 
-[./documentation/3.png](./documentation/3.png)
+![./documentation/3.png](./documentation/3.png)
 
 If I look at the log, I will have receive a link that I will be copying and pasting to AWS.
 
-[./documentation/4.png](./documentation/4.png)
+![./documentation/4.png](./documentation/4.png)
 
 Once again, I choose my pending subscription and click on "Confirm Subscription" where I will be pasting my previous validating link.
 
-[./documentation/5.png](./documentation/5.png)
+![./documentation/5.png](./documentation/5.png)
 
 And if everything went fine, I have now a confirmed subscription.
 
-[./documentation/6.png](./documentation/6.png)
+![./documentation/6.png](./documentation/6.png)
 
 #### Test by code
 
@@ -94,7 +94,7 @@ router.post(
 );
 ```
 
-[./documentation/7.png](./documentation/7.png)
+![./documentation/7.png](./documentation/7.png)
 
 #### Lambda
 
@@ -102,11 +102,11 @@ I can be a little fancy and try to send the notification from the lambda functio
 
 I search for the lambda service and click on the button "Create Function".
 
-[./documentation/8.png](./documentation/8.png)
+![./documentation/8.png](./documentation/8.png)
 
 Pay attention to the role section, since I will be using the SNS, we have to give the necessaries permissions to the lambda function.
 
-[./documentation/9.png](./documentation/9.png)
+![./documentation/9.png](./documentation/9.png)
 
 Finally, copy and paste the following code with the right information and it should be good to go.
 
@@ -126,11 +126,11 @@ exports.handler = async (event) => {
 
 Click on the "deploy" button and then "test" button and I can check the result in the terminal of my API.
 
-[./documentation/10.png](./documentation/10.png)
+![./documentation/10.png](./documentation/10.png)
 
 Sent response
 
-[./documentation/11.png](./documentation/11.png)
+![./documentation/11.png](./documentation/11.png)
 
 ## Running
 
